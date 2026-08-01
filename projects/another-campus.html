@@ -75,8 +75,8 @@
   .project-carousel__desc { margin:9px 0 0; color:#55585c; font-size:14.5px; line-height:1.7; }
   .project-carousel__more { margin-top:auto; padding-top:22px; color:#226fd1; font-size:13px; font-weight:600; }
   .project-carousel__nav { display:flex; align-items:center; justify-content:center; gap:7px; margin-top:32px; }
-  .project-carousel__arrow { display:grid; width:40px; height:40px; place-items:center; border:1px solid #cfd8e6; border-radius:50%; background:#fff; color:#0f1216; font:inherit; cursor:pointer; transition:border-color .2s ease, background .2s ease; }
-  .project-carousel__arrow:hover:not(:disabled) { border-color:#8fbdf0; background:#f7fbff; }
+  .project-carousel__arrow { display:grid; width:40px; height:40px; place-items:center; border:1px solid #e2e2de; border-radius:50%; background:#fcfcfb; color:#55585c; font:inherit; cursor:pointer; transition:background-color .2s ease, color .2s ease, border-color .2s ease; }
+  .project-carousel__arrow:hover:not(:disabled) { border-color:#0f1216; background:#0f1216; color:#fff; }
   .project-carousel__arrow:disabled { cursor:default; opacity:.35; }
   .project-carousel__dot { width:10px; height:10px; padding:0; border:0; border-radius:999px; background:#d6dce4; cursor:pointer; transition:width .2s ease, background .2s ease; }
   .project-carousel__dot.is-active { width:28px; background:#4d9bf0; }
@@ -135,13 +135,13 @@
     document.querySelectorAll('[data-page-direction]').forEach(function (button) { button.disabled = (Number(button.dataset.pageDirection) < 0 && active === 0) || (Number(button.dataset.pageDirection) > 0 && active === pageCount() - 1); });
   }
   document.querySelectorAll('[data-page-direction]').forEach(function (button) { button.addEventListener('click', function () { goToPage(Math.round(track.scrollLeft / track.clientWidth) + Number(button.dataset.pageDirection)); }); });
-  var dragging = false, dragged = false, startX = 0, startScroll = 0;
+  var dragging = false, dragged = false, pointerId = null, startX = 0, startScroll = 0;
   track.addEventListener('dragstart', function (event) { event.preventDefault(); });
-  track.addEventListener('pointerdown', function (event) { if (event.pointerType === 'touch' || event.button !== 0) return; dragging = true; dragged = false; startX = event.clientX; startScroll = track.scrollLeft; track.setPointerCapture(event.pointerId); track.classList.add('is-dragging'); });
-  track.addEventListener('pointermove', function (event) { if (!dragging) return; var distance = event.clientX - startX; if (Math.abs(distance) > 12) dragged = true; track.scrollLeft = startScroll - distance; });
-  function stopDragging() { dragging = false; track.classList.remove('is-dragging'); }
-  track.addEventListener('pointerup', stopDragging);
-  track.addEventListener('pointercancel', stopDragging);
+  track.addEventListener('pointerdown', function (event) { if (event.pointerType === 'touch' || event.button !== 0) return; dragging = true; dragged = false; pointerId = event.pointerId; startX = event.clientX; startScroll = track.scrollLeft; track.classList.add('is-dragging'); });
+  window.addEventListener('pointermove', function (event) { if (!dragging || event.pointerId !== pointerId) return; var distance = event.clientX - startX; if (Math.abs(distance) > 12) dragged = true; track.scrollLeft = startScroll - distance; });
+  function stopDragging(event) { if (event.pointerId !== pointerId) return; dragging = false; pointerId = null; track.classList.remove('is-dragging'); if (dragged) window.setTimeout(function () { dragged = false; }, 0); }
+  window.addEventListener('pointerup', stopDragging);
+  window.addEventListener('pointercancel', stopDragging);
   track.addEventListener('click', function (event) { if (dragged) { event.preventDefault(); event.stopPropagation(); dragged = false; } }, true);
   renderNav();
   track.addEventListener('scroll', updateNav, { passive:true });
