@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<style>
+  * { box-sizing:border-box; }
+  html, body, x-dc { margin:0; min-width:0; background:#fcfcfb !important; }
+  x-dc, main { display:block; }
+  #top { width:calc(100% - 64px) !important; max-width:1280px !important; margin:0 auto !important; background:#fcfcfb; }
+  @media (max-width:640px) { #top { width:100% !important; } }
+</style>
 </head>
 <body>
 <x-dc>
@@ -15,6 +22,7 @@
 <style>
   body { margin:0; background:#fcfcfb; font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif; -webkit-font-smoothing:antialiased; }
   #projects, #ai-builds, #career { background:#fcfcfb; }
+  #top { width:min(1280px, 100%); margin:0 auto; background:#fcfcfb; }
   a { color:inherit; text-decoration:none; }
   a:hover { color:#226fd1; }
   h1,h2,h3,h4,p,figure,time { margin:0; word-break:keep-all; text-wrap:pretty; }
