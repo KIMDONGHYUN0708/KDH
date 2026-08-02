@@ -46,6 +46,7 @@
   /* CES Hero: 세로 비율을 늘려 상단 로고가 잘리지 않도록 예외 처리 */
   .hero-image { aspect-ratio: 16 / 9; }
 </style>
+  <script src="../image-lightbox.js" defer></script>
 </head>
   <body>
   <!-- Google Tag Manager (noscript) -->
@@ -56,7 +57,7 @@
     <section class="shell hero">
       <p class="eyebrow">글로벌 전시 · AI 도슨트</p>
       <h1>5개 언어의 AI 도슨트를 AEM으로 구축하고 글로벌 웹 경험으로 확장했습니다.</h1>
-      <div class="specs"><div class="spec"><small>기간</small><strong>2024.11 – 2025.01</strong></div><div class="spec"><small>프로젝트</small><strong>LG CES 2025 AI 디지털 도슨트</strong></div><div class="spec"><small>담당</small><strong>서비스 기획 · AEM 직접 구축·운영 · 다국어 AI 도슨트 · 글로벌 콘텐츠 배포</strong></div></div>
+      <div class="specs" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))"><div class="spec"><small>기간</small><strong>2024.11 – 2025.01</strong></div><div class="spec"><small>프로젝트</small><strong>LG CES 2025 AI 디지털 도슨트</strong></div><div class="spec"><small>담당</small><strong>서비스 기획 · AEM 직접 구축·운영 · 다국어 AI 도슨트 · 글로벌 콘텐츠 배포</strong></div><div class="spec"><small>팀 구성</small><strong>기획 2 (기여도 90%) · 디자인 1 · 퍼블리싱 1</strong></div></div>
       <div class="hero-image"><img src="../assets/ces-ai-docent/ces-hero.png" alt="LG CES 2025 글로벌 전시 웹사이트 히어로 이미지" /></div>
     </section>
     <div class="shell detail-layout">
@@ -77,7 +78,7 @@
 <p style="margin:24px 0 10px;color:var(--sub);font-size:13.5px;">언어별 지원 범위와 음성 품질을 비교해 TTS 적용 기준을 정의했습니다.</p>
 <div class="docs" style="grid-template-columns:1fr"><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-tts-evaluation.png" alt="LG CES 2025 다국어 TTS 서비스 비교 및 평가 자료" /></div><p>지원 언어·발음·음성 자연스러움·운영 안정성을 비교해, 영어·일본어·스페인어·프랑스어는 ElevenLabs를, 중국어는 Baidu TTS로 이원화한 선정 기준</p></article></div>
 <p style="margin:24px 0 10px;color:var(--sub);font-size:13.5px;">콘텐츠 매트릭스로 글로벌 배포 기준을 세우고, 유입과 청취 데이터를 매일 확인해 행사 종료 후 결과 리포트로 정리했습니다.</p>
-<div class="docs"><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-content-matrix-blurred.png" alt="세부 내용이 블러 처리된 LG CES 2025 글로벌 콘텐츠 매트릭스" /></div><p>국가별 KV 규격·메시지·연결 URL을 관리해 약 80개 글로벌 닷컴의 배포 기준을 세운 콘텐츠 매트릭스 (민감 정보 블러 처리)</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-ga-traffic-blurred.jpg" alt="세부 내용이 블러 처리된 LG CES 2025 GA 트래픽 데이터" /></div><p>QR 유입 위치와 청취 행동을 확인하기 위해 매일 수집한 GA 트래픽 데이터 (민감 정보 블러 처리)</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-utm-tracking-plan.jpg" alt="LG CES 2025 전시존 QR UTM 파라미터 관리 시트" /></div><p>전시존 QR 스캔 데이터를 측정하기 위해 QR별로 설계한 UTM 파라미터 관리 시트</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-ai-docent-banner-conversion-report-blurred.png" alt="세부 내용이 블러 처리된 LG CES 2025 배너 전환 및 트래픽 결과 리포트" /></div><p>행사 종료 후 배너 클릭·사이트 트래픽·오디오 도슨트 재생 데이터를 종합한 결과 리포트</p></article></div>
+<div class="docs"><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-content-matrix-blurred.png" alt="세부 내용이 블러 처리된 LG CES 2025 글로벌 콘텐츠 매트릭스" /></div><p>국가별 KV 규격·메시지·연결 URL을 관리해 약 80개 글로벌 닷컴의 배포 기준을 세운 콘텐츠 매트릭스 (민감 정보 블러 처리)</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-ga-traffic-blurred.jpg" alt="세부 내용이 블러 처리된 LG CES 2025 GA 트래픽 데이터" /></div><p>QR 유입 위치와 청취 행동을 확인하기 위해 매일 수집한 GA 트래픽 데이터 (민감 정보 블러 처리)</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-utm-tracking-plan.jpg" alt="LG CES 2025 전시존 QR UTM 파라미터 관리 시트 (민감 정보 블러 처리)" /></div><p>전시존 QR 스캔 데이터를 측정하기 위해 QR별로 설계한 UTM 파라미터 관리 시트</p></article><article><div class="doc-image"><img src="../assets/ces-ai-docent/ces-ai-docent-banner-conversion-report-blurred.png" alt="세부 내용이 블러 처리된 LG CES 2025 배너 전환 및 트래픽 결과 리포트" /></div><p>행사 종료 후 배너 클릭·사이트 트래픽·오디오 도슨트 재생 데이터를 종합한 결과 리포트</p></article></div>
 </div></section>
         <section id="results" class="chapter"><span class="chapter-no">04</span><div class="chapter-content result-card"><h2>기획·구축·배포를 하나로 연결해, 글로벌 전시 경험을 완성했습니다.</h2><div class="results"><article class="result"><span>01</span><div class="result-body"><strong>5개 언어로 확장된 글로벌 도슨트</strong><p>현장 QR과 온라인 웹 모두에서 동일한 5개 언어의 AI 오디오 도슨트 경험을 제공</p></div></article><article class="result"><span>02</span><div class="result-body"><strong>80개 글로벌 닷컴 동시 노출</strong><p>국가별 KV 배너 규격과 메시지를 콘텐츠 매트릭스로 관리해 약 80개 글로벌 닷컴에 배포</p></div></article><article class="result"><span>03</span><div class="result-body"><strong>하나의 URL, 3단계 운영</strong><p>URL 변경 없이 티징·행사 오픈·아카이브 3단계를 하나의 페이지에서 전환 운영</p></div></article><article class="result"><span>04</span><div class="result-body"><strong>QR·UTM 기반 유입 데이터 확보</strong><p>전시존 QR과 UTM 파라미터를 설계해 유입 위치와 청취 행동을 매일 리포트로 확인</p></div></article></div></div></section>
       </div>
