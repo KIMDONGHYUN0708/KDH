@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" fill="#2b52c8"></rect>
+<path d="M104 96h304a48 48 0 0 1 48 48v176a48 48 0 0 1-48 48H268l-80 68v-68h-84a48 48 0 0 1-48-48V144a48 48 0 0 1 48-48z" fill="#ffffff"></path>
+<text x="256" y="298" text-anchor="middle" font-family="&#39;Pretendard&#39;, &#39;Apple SD Gothic Neo&#39;, &#39;Malgun Gothic&#39;, sans-serif" font-size="188" font-weight="700" letter-spacing="0" fill="#2b52c8">김</text>
+</svg>
