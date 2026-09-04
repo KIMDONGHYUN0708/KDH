@@ -333,10 +333,12 @@ class Component extends DCLogic {
     const f = this.state[key];
     const setKey = getSetKey();
     const set = PROJECT_SETS[setKey];
+    const defaultOrder = ["projects/ces-ai-docent.html", "projects/casper-studio.html", "projects/geumseong.html", "projects/valorant-popup.html"];
     const source = set
       ? set.order.map(href => PROJECTS.find(p => p.href === href)).filter(Boolean)
         .concat(PROJECTS.filter(p => !set.order.includes(p.href)))
-      : PROJECTS;
+      : defaultOrder.map(href => PROJECTS.find(p => p.href === href)).filter(Boolean)
+        .concat(PROJECTS.filter(p => !defaultOrder.includes(p.href)));
     return source
       .filter(p => f === "all" || p.tags.split(" ").includes(f))
       .map((p, i) => Object.assign({}, p, {
